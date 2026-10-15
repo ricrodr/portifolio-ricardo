@@ -1,159 +1,744 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0a0d10">
-<meta name="description" content="Portfólio profissional de Ricardo Rodrigues Ramos — automação de processos, Python, RPA, integrações e desenvolvimento de software.">
-<title>Ricardo Rodrigues Ramos — Automação & Software</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0a0d10;--panel:#10161b;--panel2:#131b21;--line:#243039;--text:#edf3f5;--muted:#9baab2;--accent:#63d5c3;--accent2:#a3e8dc;--max:1120px}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--text);font-family:"Source Sans 3",sans-serif;font-size:17px;line-height:1.65}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.nav{position:fixed;inset:0 0 auto;z-index:10;border-bottom:1px solid transparent;transition:background .25s,border-color .25s,backdrop-filter .25s}.nav.scrolled{background:rgba(10,13,16,.82);backdrop-filter:blur(16px);border-color:rgba(99,213,195,.13)}.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-family:Outfit,sans-serif;font-weight:700;letter-spacing:-.04em;font-size:19px}.brand span{color:var(--accent)}.nav-links{display:flex;align-items:center;gap:28px;color:#b9c5ca;font-size:15px}.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--accent)}.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:7px 10px;border-radius:8px}.hero{min-height:710px;display:grid;align-items:center;padding:150px 0 95px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;right:-180px;top:90px;width:580px;height:580px;border:1px solid rgba(99,213,195,.12);border-radius:50%;box-shadow:0 0 0 60px rgba(99,213,195,.018),0 0 0 120px rgba(99,213,195,.014);pointer-events:none}.hero:after{content:"";position:absolute;right:8%;top:230px;width:220px;height:220px;background:radial-gradient(circle,rgba(99,213,195,.12),transparent 70%);filter:blur(10px);pointer-events:none}.eyebrow{display:flex;align-items:center;gap:11px;color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.16em}.eyebrow:before{content:"";width:27px;height:1px;background:var(--accent)}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:Outfit,sans-serif;line-height:1.12;letter-spacing:-.045em}h1{font-size:clamp(44px,7vw,78px);max-width:760px;margin:24px 0 22px;font-weight:600}h1 span{color:var(--accent)}.hero-copy{max-width:650px;color:#adbbc1;font-size:20px;line-height:1.65;margin-bottom:32px}.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:7px;font-size:15px;font-weight:700;border:1px solid var(--line);transition:transform .2s,border-color .2s,background .2s}.btn:hover{transform:translateY(-2px);border-color:var(--accent)}.btn.primary{background:var(--accent);color:#081311;border-color:var(--accent)}.btn.primary:hover{background:var(--accent2)}.hero-meta{display:flex;gap:24px;flex-wrap:wrap;margin-top:54px;color:var(--muted);font-size:14px}.hero-meta span{display:flex;align-items:center;gap:8px}.dot{width:6px;height:6px;background:var(--accent);border-radius:50%}.section{padding:105px 0;border-top:1px solid rgba(255,255,255,.055)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}.kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:700;margin-bottom:13px}h2{font-size:clamp(32px,4vw,47px);margin-bottom:0;font-weight:600}.section-intro{max-width:440px;color:var(--muted);margin:0}.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}.about-copy{font-size:18px;color:#b6c2c7}.about-copy p{margin-bottom:19px}.about-copy strong{color:var(--text);font-weight:600}.skill-panel{padding:27px;background:var(--panel);border:1px solid var(--line);border-radius:12px}.skill-panel h3{font-size:19px;margin-bottom:18px;letter-spacing:-.02em}.tags{display:flex;flex-wrap:wrap;gap:9px}.tag{display:inline-flex;padding:6px 10px;border-radius:5px;background:#172128;border:1px solid #283942;color:#c5d2d6;font-size:13px;line-height:1.4}.skill-group+.skill-group{margin-top:25px}.skill-group label{display:block;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:11px}.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.project{min-height:300px;padding:27px;background:linear-gradient(145deg,#121a20,#0f1418 80%);border:1px solid var(--line);border-radius:12px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}.project:hover{transform:translateY(-5px);border-color:rgba(99,213,195,.55);box-shadow:0 15px 45px rgba(0,0,0,.18)}.project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:27px}.project-mark{width:42px;height:42px;display:grid;place-items:center;border-radius:9px;background:rgba(99,213,195,.09);border:1px solid rgba(99,213,195,.22);color:var(--accent)}.project-type{font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.project h3{font-size:23px;margin-bottom:12px}.project p{color:var(--muted);font-size:16px;margin-bottom:22px}.project .tags{margin-top:auto}.project-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:14px;font-weight:700;margin-top:22px;width:max-content}.project-link:hover{color:var(--accent2)}.note{font-size:14px;color:#84949c;margin-top:18px}.timeline{border-left:1px solid #2b3a42;margin-left:8px;padding-left:31px;display:grid;gap:32px}.role{position:relative;padding:0 0 4px}.role:before{content:"";position:absolute;left:-37px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--accent);box-shadow:0 0 0 5px rgba(99,213,195,.08)}.role-head{display:flex;justify-content:space-between;align-items:start;gap:24px}.role h3{font-size:22px;margin-bottom:6px}.company{color:var(--accent);font-weight:600}.period{white-space:nowrap;color:var(--muted);font-size:14px;padding-top:4px}.role p{color:var(--muted);max-width:780px;margin:12px 0 0}.contact-panel{padding:clamp(28px,5vw,54px);border:1px solid #2b4248;background:linear-gradient(120deg,rgba(99,213,195,.08),rgba(16,22,27,.7) 60%);border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:35px}.contact-panel h2{max-width:600px;margin-bottom:14px}.contact-panel p{color:var(--muted);margin-bottom:0;max-width:590px}.contact-actions{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}.footer{padding:30px 0;color:#819098;font-size:14px}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-links{display:flex;gap:18px}.footer a:hover{color:var(--accent)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:translateY(0)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-@media(max-width:760px){.wrap{width:min(var(--max),calc(100% - 34px))}.nav-inner{height:68px}.menu-toggle{display:block}.nav-links{display:none;position:absolute;top:67px;left:0;right:0;padding:18px 22px 22px;background:rgba(10,13,16,.97);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:15px}.nav-links.open{display:flex}.hero{min-height:auto;padding:135px 0 75px}.hero:before{right:-390px;top:130px}.hero:after{right:-20px}.hero-copy{font-size:18px}.hero-meta{margin-top:37px;gap:15px}.section{padding:75px 0}.section-head{display:block;margin-bottom:30px}.section-intro{margin-top:17px}.about-grid{grid-template-columns:1fr;gap:30px}.projects{grid-template-columns:1fr}.project{min-height:280px}.role-head{display:block}.period{display:block;margin-top:5px}.contact-panel{align-items:flex-start;flex-direction:column}.footer-inner{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
-</style>
-</head>
-<body>
-<nav class="nav" id="navbar" aria-label="Navegação principal">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#inicio" aria-label="Ricardo Ramos, início">RR<span>.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks">Menu</button>
-    <div class="nav-links" id="navLinks">
-      <a href="#sobre">Sobre</a><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#contato">Contato</a>
-    </div>
-  </div>
-</nav>
-<main>
-<section class="hero" id="inicio">
-  <div class="wrap">
-    <div class="eyebrow">Automação · Engenharia de software</div>
-    <h1>Ricardo Rodrigues<br><span>Ramos.</span></h1>
-    <p class="hero-copy">Especialista em Automação de Processos, Python e RPA. Transformo rotinas complexas em soluções de software confiáveis, integradas e sustentáveis — conectando tecnologia, dados e necessidades reais do negócio.</p>
-    <div class="actions">
-      <a class="btn primary" href="#projetos">Ver projetos <span aria-hidden="true">↘</span></a>
-      <a class="btn" href="https://www.linkedin.com/in/ricardoramos20" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <a class="btn" href="https://github.com/ricrodr" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-    </div>
-    <div class="hero-meta">
-      <span><i class="dot"></i> Python &amp; RPA</span>
-      <span><i class="dot"></i> Integrações e APIs</span>
-      <span><i class="dot"></i> Automação corporativa</span>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="sobre">
-  <div class="wrap">
-    <div class="section-head reveal"><div><div class="kicker">01 / Sobre mim</div><h2>Tecnologia com propósito.</h2></div><p class="section-intro">Software bem construído não apenas automatiza tarefas: cria consistência, visibilidade e espaço para decisões melhores.</p></div>
-    <div class="about-grid">
-      <div class="about-copy reveal">
-        <p>Sou profissional de tecnologia com foco em <strong>automação de processos, desenvolvimento Python e integração de sistemas</strong>. Minha atuação combina visão de negócio e profundidade técnica para construir soluções que simplificam operações e melhoram a forma como os times trabalham.</p>
-        <p>Na prática, trabalho com automações corporativas, APIs, consultas a bancos de dados e ferramentas de orquestração. Também valorizo arquitetura, padronização, observabilidade e governança — porque uma automação precisa ser útil hoje e sustentável amanhã.</p>
-        <p>Tenho experiência em iniciativas que aproximam pessoas e tecnologia, incluindo portais internos para descoberta e execução de automações e fluxos integrados a plataformas de orquestração.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f4ef" />
+    <meta
+      name="description"
+      content="Ricardo Rodrigues Ramos. Automação, Python e engenharia de software para conectar sistemas, simplificar processos e dar mais espaço às pessoas."
+    />
+    <meta
+      property="og:title"
+      content="Ricardo Ramos — Menos rotina. Mais possibilidades."
+    />
+    <meta
+      property="og:description"
+      content="Automação de processos, Python e software com propósito. Conheça meu trabalho e experimente uma automação em ação."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary" />
+    <title>Ricardo Ramos — Automação & Engenharia de Software</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <header class="site-header" id="navbar">
+      <nav class="wrap nav-inner" aria-label="Navegação principal">
+        <a class="brand" href="#inicio" aria-label="Ricardo Ramos, início"
+          ><span class="brand-mark">rr<span>∕</span></span
+          ><span class="brand-name"
+            >ricardo ramos<span>software & automação</span></span
+          ></a
+        >
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="navLinks"
+          hidden
+        >
+          <span>Menu</span><span class="menu-icon" aria-hidden="true"></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#projetos">Projetos</a><a href="#sobre">Sobre</a
+          ><a href="#experiencia">Experiência</a
+          ><a class="nav-contact" href="#contato"
+            >Vamos conversar <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </nav>
+    </header>
+    <main id="conteudo">
+      <section class="hero wrap" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="status-dot" aria-hidden="true"></span> Automações que
+            fazem a diferença
+          </p>
+          <h1 id="hero-title">
+            Menos rotina.<br />Mais <span>possibilidades.</span>
+          </h1>
+          <p class="hero-description">
+            Sou <strong>Ricardo Ramos</strong>, especialista em automação e
+            desenvolvimento de software. Conecto sistemas e transformo processos
+            complexos em soluções simples de usar.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#projetos"
+              >Explore meu trabalho <span aria-hidden="true">↘</span></a
+            ><a
+              class="text-link"
+              href="https://github.com/ricrodr"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub <span aria-hidden="true">↗</span
+              ><span class="sr-only"> (abre em nova aba)</span></a
+            >
+          </div>
+          <div class="hero-footnote">
+            <span class="tiny-cross" aria-hidden="true">✳</span>
+            <p>
+              Código bem pensado.<br /><strong
+                >Mais tempo para o que importa.</strong
+              >
+            </p>
+          </div>
+        </div>
+        <div class="workbench">
+          <div class="workbench-top">
+            <span class="mono">POR TRÁS DO CÓDIGO</span
+            ><span class="mono" aria-hidden="true">&lt;/&gt;</span>
+          </div>
+          <div class="profile-intro">
+            <img
+              class="portrait"
+              src="assets/ricardo-ramos.jpg"
+              width="640"
+              height="640"
+              fetchpriority="high"
+              alt="Ricardo Rodrigues Ramos sorrindo em seu ambiente de trabalho"
+            />
+            <div>
+              <p class="profile-name">
+                Ricardo<br />Rodrigues Ramos<span>.</span>
+              </p>
+              <p class="profile-role">Analista Sênior de Automação e RPA</p>
+            </div>
+          </div>
+          <div
+            class="terminal"
+            aria-label="Demonstração interativa de automação"
+          >
+            <div class="terminal-bar">
+              <span class="terminal-dots" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              ><span>workflow.py</span><span class="terminal-label">DEMO</span>
+            </div>
+            <div class="terminal-body">
+              <p class="code-line">
+                <span class="code-muted">01</span
+                ><span
+                  ><span class="code-purple">from</span> rotina
+                  <span class="code-purple">import</span> possibilidades</span
+                >
+              </p>
+              <p class="code-line">
+                <span class="code-muted">02</span
+                ><span
+                  ><span class="code-purple">def</span>
+                  <span class="code-lime">simplificar</span>(processo):</span
+                >
+              </p>
+              <p class="code-line">
+                <span class="code-muted">03</span
+                ><span
+                  >&nbsp;&nbsp;<span class="code-purple">return</span>
+                  automatizar(processo)</span
+                >
+              </p>
+              <div class="workflow" aria-label="Etapas da demonstração">
+                <div class="workflow-step" data-step="0">
+                  <span class="step-symbol" aria-hidden="true">↓</span
+                  ><span>Coletar</span>
+                </div>
+                <span class="workflow-connector" aria-hidden="true"></span>
+                <div class="workflow-step" data-step="1">
+                  <span class="step-symbol" aria-hidden="true">✓</span
+                  ><span>Validar</span>
+                </div>
+                <span class="workflow-connector" aria-hidden="true"></span>
+                <div class="workflow-step" data-step="2">
+                  <span class="step-symbol" aria-hidden="true">↗</span
+                  ><span>Integrar</span>
+                </div>
+              </div>
+              <div
+                class="terminal-output"
+                id="demoOutput"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <span class="prompt" aria-hidden="true">›</span
+                ><span id="demoMessage"
+                  >Um processo. Menos trabalho manual.</span
+                >
+              </div>
+              <button class="run-button" id="runDemo" type="button" hidden>
+                <span id="runLabel">Executar demonstração</span
+                ><span id="runIcon" aria-hidden="true">▶</span>
+              </button>
+              <p class="demo-note">Simulação local · dados fictícios</p>
+              <noscript
+                ><p class="demo-note">
+                  Ative o JavaScript para executar a demonstração.
+                </p></noscript
+              >
+            </div>
+          </div>
+          <span class="workbench-sticker" aria-hidden="true"
+            >feito para<br /><strong>simplificar ↗</strong></span
+          >
+        </div>
+        <div class="hero-bottom">
+          <span class="mono">TECNOLOGIA A SERVIÇO DAS PESSOAS</span
+          ><a href="#projetos" aria-label="Descer para os projetos"
+            ><span aria-hidden="true">↓</span></a
+          >
+        </div>
+      </section>
+      <div class="stack-strip" aria-label="Principais tecnologias">
+        <div class="wrap stack-inner">
+          <span>Minha caixa de ferramentas</span>
+          <ul>
+            <li>Python</li>
+            <li>RPA</li>
+            <li>APIs</li>
+            <li>SQL</li>
+            <li>Airflow</li>
+            <li>n8n</li>
+          </ul>
+          <span aria-hidden="true">✳</span>
+        </div>
       </div>
-      <aside class="skill-panel reveal" aria-label="Competências técnicas">
-        <div class="skill-group"><label>Desenvolvimento</label><div class="tags"><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">SQL</span><span class="tag">Flask</span><span class="tag">REST APIs</span></div></div>
-        <div class="skill-group"><label>Automação &amp; dados</label><div class="tags"><span class="tag">RPA</span><span class="tag">n8n</span><span class="tag">Apache Airflow</span><span class="tag">Web scraping</span><span class="tag">Power Automate</span><span class="tag">BI</span></div></div>
-        <div class="skill-group"><label>Plataformas &amp; ferramentas</label><div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">MySQL</span><span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Sankhya ERP</span></div></div>
-      </aside>
-    </div>
-  </div>
-</section>
 
-<section class="section" id="projetos">
-  <div class="wrap">
-    <div class="section-head reveal"><div><div class="kicker">02 / Projetos em destaque</div><h2>Construído para resolver.</h2></div><p class="section-intro">Projetos e frentes de trabalho que demonstram como abordo automação, integração e ferramentas para equipes.</p></div>
-    <div class="projects">
-      <article class="project reveal">
-        <div class="project-top"><div class="project-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 7H5a2 2 0 0 0-2 2v10h10v-3M16 3h5v5M21 3l-9 9"/><rect x="8" y="3" width="8" height="8" rx="2"/></svg></div><span class="project-type">Repositório público</span></div>
-        <h3>Automations</h3>
-        <p>Repositório dedicado a soluções de automação. O objetivo é centralizar scripts e recursos que ajudam a reduzir trabalho manual e tornar processos repetitivos mais consistentes. Consulte o README para detalhes, instruções de uso e tecnologias específicas.</p>
-        <div class="tags"><span class="tag">Automação</span><span class="tag">Python / scripts*</span><span class="tag">Produtividade</span></div>
-        <a class="project-link" href="https://github.com/ricrodr/automations" target="_blank" rel="noopener noreferrer">Explorar repositório <span aria-hidden="true">↗</span></a>
-      </article>
-      <article class="project reveal">
-        <div class="project-top"><div class="project-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 9v11M12 13h5M12 16h5"/></svg></div><span class="project-type">Projeto de engenharia</span></div>
-        <h3>Portal de Automação</h3>
-        <p>Portal interno para reunir automações corporativas em um único ponto, permitindo que áreas encontrem e executem rotinas com mais autonomia, enquanto a gestão ganha visibilidade e governança sobre o ecossistema de RPA.</p>
-        <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">Airflow</span><span class="tag">MySQL</span></div>
-        <span class="project-link" aria-label="Projeto interno, sem link público">Projeto corporativo <span aria-hidden="true">↗</span></span>
-      </article>
-      <article class="project reveal">
-        <div class="project-top"><div class="project-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5h16v14H4zM8 9l3 3-3 3M13 15h3"/></svg></div><span class="project-type">Padrões de desenvolvimento</span></div>
-        <h3>Frameworks para RPA</h3>
-        <p>Estruturação e padronização de automações com atenção à arquitetura, reutilização de componentes e manutenção de projetos existentes. Uma abordagem para reduzir duplicação e elevar a qualidade das entregas.</p>
-        <div class="tags"><span class="tag">Python</span><span class="tag">MVC</span><span class="tag">RPA</span><span class="tag">Boas práticas</span></div>
-        <span class="project-link">Arquitetura &amp; qualidade</span>
-      </article>
-      <article class="project reveal">
-        <div class="project-top"><div class="project-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></div><span class="project-type">Integração de dados</span></div>
-        <h3>Integrações &amp; dados</h3>
-        <p>Automação de fluxos que conectam APIs, bancos relacionais e sistemas corporativos. Foco em reduzir etapas manuais, padronizar o tratamento de informações e apoiar processos operacionais e financeiros.</p>
-        <div class="tags"><span class="tag">SQL</span><span class="tag">REST APIs</span><span class="tag">SQL Server</span><span class="tag">Python</span></div>
-        <span class="project-link">Integração de sistemas</span>
-      </article>
-    </div>
-    <p class="note">* Tecnologias do repositório precisam ser confirmadas diretamente no GitHub. O endereço informado não disponibilizou os metadados do projeto durante a consulta; os cards corporativos descrevem frentes de trabalho e não são apresentados como repositórios públicos.</p>
-  </div>
-</section>
-
-<section class="section" id="experiencia">
-  <div class="wrap">
-    <div class="section-head reveal"><div><div class="kicker">03 / Trajetória</div><h2>Experiência profissional.</h2></div><p class="section-intro">Atuação em desenvolvimento de sistemas, automação de processos e evolução de soluções corporativas.</p></div>
-    <div class="timeline">
-      <article class="role reveal"><div class="role-head"><div><h3>Analista Sênior de Automação e RPA</h3><div class="company">Trinus</div></div><span class="period">Ago. 2025 — atual</span></div><p>Desenvolvimento e evolução de automações corporativas, integração com plataformas de orquestração e construção de ferramentas internas. Atuação em padronização técnica, governança e ampliação do autosserviço para execução de processos automatizados.</p></article>
-      <article class="role reveal"><div class="role-head"><div><h3>Analista de Sistemas</h3><div class="company">Dolp Engenharia</div></div><span class="period">Mai. 2024 — Ago. 2025</span></div><p>Atuação com sistemas corporativos e melhorias de processos, incluindo customizações e integrações envolvendo Sankhya ERP e desenvolvimento com Python e Java.</p></article>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="contato">
-  <div class="wrap">
-    <div class="contact-panel reveal">
-      <div><div class="kicker">04 / Vamos conversar</div><h2>Tem um processo para melhorar?</h2><p>Estou aberto a trocar ideias sobre automação, desenvolvimento de software, integração de sistemas e oportunidades para criar soluções com impacto real.</p></div>
-      <div class="contact-actions"><a class="btn primary" href="https://www.linkedin.com/in/ricardoramos20" target="_blank" rel="noopener noreferrer">Falar no LinkedIn ↗</a><a class="btn" href="https://github.com/ricrodr" target="_blank" rel="noopener noreferrer">Ver GitHub ↗</a></div>
-    </div>
-  </div>
-</section>
-</main>
-<footer class="footer"><div class="wrap footer-inner"><span>© <span id="year"></span> Ricardo Rodrigues Ramos. Feito com intenção e código.</span><div class="footer-links"><a href="https://www.linkedin.com/in/ricardoramos20" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/ricrodr" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#inicio">Voltar ao topo ↑</a></div></div></footer>
-<script>
-(() => {
-  const nav = document.getElementById('navbar');
-  const toggle = document.getElementById('menuToggle');
-  const links = document.getElementById('navLinks');
-  const updateNav = () => nav.classList.toggle('scrolled', window.scrollY > 12);
-  updateNav();
-  window.addEventListener('scroll', updateNav, { passive: true });
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.textContent = open ? 'Fechar' : 'Menu';
-  });
-  links.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-    links.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.textContent = 'Menu';
-  }));
-  document.getElementById('year').textContent = new Date().getFullYear();
-  const items = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    items.forEach(item => observer.observe(item));
-  } else {
-    items.forEach(item => item.classList.add('visible'));
-  }
-})();
-</script>
-</body>
+      <section
+        class="section wrap"
+        id="projetos"
+        aria-labelledby="projects-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-number">01 / Trabalho em prática</p>
+            <h2 id="projects-title">
+              Problemas reais.<br /><span class="subtle"
+                >Soluções que conectam.</span
+              >
+            </h2>
+          </div>
+          <p>
+            Uma seleção de projetos e frentes de trabalho em automação, produtos
+            internos e integração de sistemas.
+          </p>
+        </div>
+        <div class="project-toolbar" id="projectToolbar" hidden>
+          <div
+            class="filters"
+            role="group"
+            aria-label="Filtrar projetos por área"
+          >
+            <button
+              type="button"
+              class="filter active"
+              data-filter="todos"
+              aria-pressed="true"
+            >
+              Todos <span>04</span></button
+            ><button
+              type="button"
+              class="filter"
+              data-filter="automacao"
+              aria-pressed="false"
+            >
+              Automação</button
+            ><button
+              type="button"
+              class="filter"
+              data-filter="produto"
+              aria-pressed="false"
+            >
+              Produto</button
+            ><button
+              type="button"
+              class="filter"
+              data-filter="integracoes"
+              aria-pressed="false"
+            >
+              Integrações
+            </button>
+          </div>
+          <p
+            class="project-count mono"
+            id="projectCount"
+            role="status"
+            aria-live="polite"
+          >
+            04 projetos e frentes
+          </p>
+        </div>
+        <div class="projects">
+          <article class="project project-featured" data-category="produto">
+            <div class="project-visual portal-visual">
+              <span class="visual-caption mono">REPRESENTAÇÃO CONCEITUAL</span>
+              <div class="portal-preview" aria-hidden="true">
+                <div class="preview-sidebar">
+                  <span class="preview-logo">a<span>∕</span></span
+                  ><span class="sidebar-line selected"></span
+                  ><span class="sidebar-line"></span
+                  ><span class="sidebar-line"></span
+                  ><span class="sidebar-line short"></span
+                  ><span class="sidebar-bottom">↳</span>
+                </div>
+                <div class="preview-content">
+                  <div class="preview-topline">
+                    <span>Workspace</span><span class="preview-avatar">RR</span>
+                  </div>
+                  <p class="preview-title">Tudo flui por aqui<span>.</span></p>
+                  <p class="preview-subtitle">
+                    Suas automações, em um só lugar.
+                  </p>
+                  <div class="preview-stats">
+                    <div>
+                      <span>Autonomia</span><strong>Self-service ↗</strong>
+                    </div>
+                    <div>
+                      <span>Visibilidade</span
+                      ><strong>Fluxos conectados</strong>
+                    </div>
+                  </div>
+                  <div class="preview-task">
+                    <span class="task-icon">↻</span>
+                    <div>
+                      <strong>Rotina financeira</strong
+                      ><span>Integração · Orquestração</span>
+                    </div>
+                    <span class="task-status">Pronto</span>
+                  </div>
+                  <div class="preview-task">
+                    <span class="task-icon">⇄</span>
+                    <div>
+                      <strong>Sincronização de dados</strong
+                      ><span>API · Banco de dados</span>
+                    </div>
+                    <span class="task-status">Pronto</span>
+                  </div>
+                </div>
+              </div>
+              <span class="visual-footnote mono"
+                >AUTONOMIA PARA OS TIMES ↗</span
+              >
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-category">Produto interno</span
+                ><span class="mono">01</span>
+              </div>
+              <h3>Portal de Automação</h3>
+              <p>
+                Um ponto de encontro entre pessoas e automações. Rotinas
+                corporativas organizadas para que os times encontrem e executem
+                o que precisam com autonomia.
+              </p>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>Next.js</li>
+                <li>TypeScript</li>
+                <li>Airflow</li>
+                <li>MySQL</li>
+              </ul>
+              <details class="project-details">
+                <summary>
+                  Conheça a abordagem <span aria-hidden="true">+</span>
+                </summary>
+                <div class="details-content">
+                  <h4>O desafio</h4>
+                  <p>
+                    Facilitar a descoberta e a execução de automações, com
+                    visibilidade sobre o ecossistema de RPA.
+                  </p>
+                  <h4>A abordagem</h4>
+                  <p>
+                    Reunir as rotinas em uma interface React, integrar a
+                    execução à orquestração e tratar governança como parte do
+                    produto.
+                  </p>
+                  <span class="project-private"
+                    >Projeto corporativo · código privado</span
+                  >
+                </div>
+              </details>
+            </div>
+          </article>
+          <article class="project" data-category="automacao">
+            <div class="project-visual automation-visual">
+              <span class="visual-caption mono">CONCEITO / AUTOMAÇÃO</span>
+              <div class="automation-art" aria-hidden="true">
+                <div class="manual-tasks">
+                  <span>↳ planilha.xlsx</span><span>↳ relatório.csv</span
+                  ><span>↳ rotina_diária</span>
+                </div>
+                <span class="art-arrow">→</span>
+                <div class="python-node">py<span>automatizar()</span></div>
+              </div>
+              <span class="visual-footnote mono"
+                >REPETIÇÃO → POSSIBILIDADES</span
+              >
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-category">Automação de processos</span
+                ><span class="mono">02</span>
+              </div>
+              <h3>Rotinas no automático</h3>
+              <p>
+                Scripts e fluxos para simplificar tarefas repetitivas, conectar
+                ferramentas e tornar o dia a dia das operações mais consistente.
+              </p>
+              <ul class="tags" aria-label="Competências">
+                <li>Python</li>
+                <li>RPA</li>
+                <li>Processos</li>
+              </ul>
+              <details class="project-details">
+                <summary>
+                  Conheça a abordagem <span aria-hidden="true">+</span>
+                </summary>
+                <div class="details-content">
+                  <h4>O desafio</h4>
+                  <p>
+                    Transformar etapas manuais recorrentes em rotinas que possam
+                    ser executadas de forma padronizada.
+                  </p>
+                  <h4>A abordagem</h4>
+                  <p>
+                    Mapear o processo, automatizar suas etapas com scripts e
+                    integrar a execução às ferramentas usadas pela operação.
+                  </p>
+                  <a
+                    class="text-link"
+                    href="https://github.com/ricrodr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Explore meu GitHub <span aria-hidden="true">↗</span
+                    ><span class="sr-only"> (abre em nova aba)</span></a
+                  >
+                </div>
+              </details>
+            </div>
+          </article>
+          <article class="project" data-category="automacao">
+            <div class="project-visual framework-visual">
+              <span class="visual-caption mono">CONCEITO / ARQUITETURA</span>
+              <div class="framework-art" aria-hidden="true">
+                <div><span class="folder-icon">⌁</span> automation/</div>
+                <div class="tree-line">
+                  <span>├─</span> controllers/ <i>lógica</i>
+                </div>
+                <div class="tree-line">
+                  <span>├─</span> models/ <i>dados</i>
+                </div>
+                <div class="tree-line">
+                  <span>└─</span> services/ <i>integrações</i>
+                </div>
+              </div>
+              <span class="visual-footnote mono"
+                >ORGANIZAR. REUTILIZAR. EVOLUIR.</span
+              >
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-category">Arquitetura & qualidade</span
+                ><span class="mono">03</span>
+              </div>
+              <h3>Uma base para escalar</h3>
+              <p>
+                Frameworks e padrões para RPA. Uma estrutura que reduz
+                duplicação e facilita a manutenção das automações ao longo do
+                tempo.
+              </p>
+              <ul class="tags" aria-label="Tecnologias e práticas">
+                <li>Python</li>
+                <li>MVC</li>
+                <li>Reutilização</li>
+              </ul>
+              <details class="project-details">
+                <summary>
+                  Conheça a abordagem <span aria-hidden="true">+</span>
+                </summary>
+                <div class="details-content">
+                  <h4>O desafio</h4>
+                  <p>
+                    Evoluir automações existentes sem multiplicar código e
+                    tornar cada nova manutenção mais complexa.
+                  </p>
+                  <h4>A abordagem</h4>
+                  <p>
+                    Separar responsabilidades, estruturar componentes
+                    reutilizáveis e padronizar a organização dos projetos.
+                  </p>
+                  <span class="project-private"
+                    >Frente de trabalho corporativa</span
+                  >
+                </div>
+              </details>
+            </div>
+          </article>
+          <article class="project" data-category="integracoes">
+            <div class="project-visual integration-visual">
+              <span class="visual-caption mono">CONCEITO / CONEXÕES</span>
+              <div class="integration-art" aria-hidden="true">
+                <span class="integration-node">API</span
+                ><span class="integration-wire"></span
+                ><span class="integration-core">⇄</span
+                ><span class="integration-wire"></span
+                ><span class="integration-node">SQL</span
+                ><span class="integration-bottom">sistemas que conversam</span>
+              </div>
+              <span class="visual-footnote mono">DO DADO À OPERAÇÃO</span>
+            </div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span class="project-category">Integração de sistemas</span
+                ><span class="mono">04</span>
+              </div>
+              <h3>Conexões que fluem</h3>
+              <p>
+                APIs, bancos de dados e sistemas corporativos trabalhando juntos
+                para apoiar processos operacionais e financeiros.
+              </p>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>REST APIs</li>
+                <li>SQL Server</li>
+                <li>Python</li>
+              </ul>
+              <details class="project-details">
+                <summary>
+                  Conheça a abordagem <span aria-hidden="true">+</span>
+                </summary>
+                <div class="details-content">
+                  <h4>O desafio</h4>
+                  <p>
+                    Conectar informações entre sistemas e reduzir a necessidade
+                    de transportar dados manualmente.
+                  </p>
+                  <h4>A abordagem</h4>
+                  <p>
+                    Integrar APIs e bancos relacionais, padronizando o
+                    tratamento das informações em fluxos automatizados.
+                  </p>
+                  <span class="project-private"
+                    >Frente de trabalho corporativa</span
+                  >
+                </div>
+              </details>
+            </div>
+          </article>
+        </div>
+        <p class="projects-note">
+          <span aria-hidden="true">↳</span> Os visuais ilustram os conceitos dos
+          projetos. Trabalhos corporativos têm seu contexto apresentado sem
+          expor dados internos.
+        </p>
+      </section>
+      <section class="about-section" id="sobre" aria-labelledby="about-title">
+        <div class="wrap section about-grid">
+          <div class="about-heading">
+            <p class="eyebrow section-number">02 / Além do código</p>
+            <h2 id="about-title">
+              Tecnologia é o meio.<br /><span
+                >As pessoas,<br />o propósito.</span
+              >
+            </h2>
+            <div class="about-signature">
+              <img
+                src="assets/ricardo-ramos.jpg"
+                alt=""
+                width="56"
+                height="56"
+                loading="lazy"
+              />
+              <div>
+                <strong>Ricardo Rodrigues Ramos</strong
+                ><span>Automação & Engenharia de Software</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-content">
+            <p class="about-lead">
+              Gosto de olhar para um processo e pensar:
+              <strong>“isso pode ser mais simples.”</strong>
+            </p>
+            <p>
+              É assim que trabalho: aproximando visão de negócio e
+              desenvolvimento de software para construir soluções que ajudam os
+              times a trabalhar melhor.
+            </p>
+            <p>
+              Meu foco está em automação com Python, integração de sistemas e
+              ferramentas internas. Da consulta SQL à interface de um portal,
+              procuro conectar as peças com clareza, consistência e atenção à
+              manutenção.
+            </p>
+            <p>
+              Uma boa automação resolve o problema de hoje e continua fazendo
+              sentido amanhã. Por isso, arquitetura, observabilidade e
+              governança fazem parte do meu jeito de construir.
+            </p>
+            <div class="principles">
+              <span
+                ><i aria-hidden="true">01</i> Entender antes de
+                automatizar</span
+              ><span><i aria-hidden="true">02</i> Construir para evoluir</span
+              ><span
+                ><i aria-hidden="true">03</i> Simplificar para quem usa</span
+              >
+            </div>
+          </div>
+          <div class="expertise">
+            <div>
+              <span class="mono">DESENVOLVIMENTO</span>
+              <p>Python · JavaScript · TypeScript · Flask · React · Next.js</p>
+            </div>
+            <div>
+              <span class="mono">AUTOMAÇÃO & DADOS</span>
+              <p>
+                RPA · n8n · Apache Airflow · Power Automate · Web scraping · BI
+              </p>
+            </div>
+            <div>
+              <span class="mono">SISTEMAS & FERRAMENTAS</span>
+              <p>
+                SQL · MySQL · SQL Server · Oracle · REST APIs · Git · Linux ·
+                Sankhya
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="section wrap experience-section"
+        id="experiencia"
+        aria-labelledby="experience-title"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-number">03 / Caminho até aqui</p>
+            <h2 id="experience-title">
+              Experiência que<br /><span class="subtle">vira construção.</span>
+            </h2>
+          </div>
+          <a
+            class="text-link"
+            href="https://www.linkedin.com/in/ricardoramos20"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Trajetória no LinkedIn <span aria-hidden="true">↗</span
+            ><span class="sr-only"> (abre em nova aba)</span></a
+          >
+        </div>
+        <div class="timeline">
+          <article class="role">
+            <div class="role-date">
+              <span class="current-label"
+                ><span class="status-dot" aria-hidden="true"></span>
+                Atualmente</span
+              ><span>Ago. 2025 — atual</span>
+            </div>
+            <div class="role-content">
+              <p class="company">Trinus</p>
+              <h3>Analista Sênior de Automação e RPA</h3>
+              <p>
+                Desenvolvimento e evolução de automações corporativas,
+                integração com plataformas de orquestração e construção de
+                ferramentas internas. Padronização técnica, governança e mais
+                autonomia para os times executarem seus processos.
+              </p>
+              <ul class="tags" aria-label="Áreas de atuação">
+                <li>Automação corporativa</li>
+                <li>Orquestração</li>
+                <li>Produtos internos</li>
+              </ul>
+            </div>
+            <span class="role-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="role">
+            <div class="role-date">
+              <span class="mono">EXPERIÊNCIA ANTERIOR</span
+              ><span>Mai. 2024 — Ago. 2025</span>
+            </div>
+            <div class="role-content">
+              <p class="company">Dolp Engenharia</p>
+              <h3>Analista de Sistemas</h3>
+              <p>
+                Sistemas corporativos e melhoria de processos, com customizações
+                e integrações envolvendo Sankhya ERP e desenvolvimento com
+                Python e Java.
+              </p>
+              <ul class="tags" aria-label="Tecnologias">
+                <li>Sankhya ERP</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>Integrações</li>
+              </ul>
+            </div>
+            <span class="role-arrow" aria-hidden="true">↗</span>
+          </article>
+        </div>
+      </section>
+      <section
+        class="contact-section"
+        id="contato"
+        aria-labelledby="contact-title"
+      >
+        <div class="wrap contact-inner">
+          <div>
+            <p class="eyebrow section-number">04 / A próxima conexão</p>
+            <h2 id="contact-title">
+              Tem um processo<br />que merece <span>evoluir?</span>
+            </h2>
+            <p>
+              Vamos trocar ideias sobre automação, software ou uma oportunidade
+              de construir algo que faça a diferença.
+            </p>
+            <a
+              class="button button-lime"
+              href="https://www.linkedin.com/in/ricardoramos20"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Vamos conversar no LinkedIn <span aria-hidden="true">↗</span
+              ><span class="sr-only"> (abre em nova aba)</span></a
+            >
+          </div>
+          <div class="contact-symbol" aria-hidden="true">↗</div>
+          <div class="contact-bottom">
+            <span>Boas soluções começam com uma conversa.</span
+            ><a
+              class="text-link"
+              href="https://github.com/ricrodr"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Encontre meu código no GitHub <span aria-hidden="true">↗</span
+              ><span class="sr-only"> (abre em nova aba)</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <a
+        class="brand-mark"
+        href="#inicio"
+        aria-label="Ricardo Ramos, voltar ao início"
+        >rr<span>∕</span></a
+      >
+      <p>
+        © <span id="year">2026</span> Ricardo Rodrigues Ramos.<br /><span
+          >Feito com intenção. E um pouco de automação.</span
+        >
+      </p>
+      <a class="back-top text-link" href="#inicio"
+        >De volta ao topo <span aria-hidden="true">↑</span></a
+      >
+    </footer>
+  </body>
 </html>
